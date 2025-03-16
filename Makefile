@@ -1,4 +1,4 @@
-VERSION = v0.1-r20241027
+VERSION = v0.2-r$(shell date +%Y%m%d)
 PREFIX = /usr/local
 MANPREFIX = $(PREFIX)/share/man
 SRC = quran-cli.go
