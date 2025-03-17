@@ -2,7 +2,7 @@ TODO
 ====
 Bug
 ---
-[ ] Fix Makefile: Copy db to $HOME/local/share/quran-cli/
+[x] Fix Makefile: Copy db to /usr/local/share/quran-cli/
 
 Features
 --------

@@ -1,5 +1,6 @@
 VERSION = v0.2-r$(shell date +%Y%m%d)
 PREFIX = /usr/local
+# DB = $(PREFIX)/share/quran-cli/
 MANPREFIX = $(PREFIX)/share/man
 SRC = quran-cli.go
 
@@ -10,6 +11,8 @@ install: quran-cli
 	mkdir -p $(DESTDIR)$(PREFIX)/bin
 	cp -f quran-cli $(DESTDIR)$(PREFIX)/bin
 	chmod 755 $(DESTDIR)$(PREFIX)/bin/quran-cli
+	mkdir -p $(DESTDIR)$(PREFIX)/share/quran-cli/db
+	cp -rf db/* $(DESTDIR)$(PREFIX)/share/quran-cli/db/
 	mkdir -p $(DESTDIR)$(MANPREFIX)/man1
 	sed "s/VERSION/$(VERSION)/g" < quran-cli.1 > $(DESTDIR)$(MANPREFIX)/man1/quran-cli.1
 	chmod 644 $(DESTDIR)$(MANPREFIX)/man1/quran-cli.1

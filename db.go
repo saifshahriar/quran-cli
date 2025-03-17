@@ -129,12 +129,7 @@ func surahs() []string {
 }
 
 func checkdbHealth() string {
-	homeDir, err := os.UserHomeDir()
-	if err != nil {
-		log.Fatalf("Error: %s", err)
-	}
-
-	textPath := homeDir + "/.local/share/quran-cli/db/en.sahih.txt"
+	textPath := "/usr/local/share/quran-cli/db/en.sahih.txt"
 	f, err := os.Open(textPath)
 	if err != nil {
 		log.Fatalf("Error: %s", err)
