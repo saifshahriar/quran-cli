@@ -12,6 +12,7 @@ var VERSION string = "1.0"
 
 type Options struct {
 	Version  bool   `short:"v" long:"version"   description:"Print version and exit"`
+	List     bool   `short:"l" long:"list"      description:"List all Surahs and exit"`
 	FullText bool   `short:"f" long:"full-text" description:"Print the full text of the Qur'an to stdout and exit"`
 	Surah    uint8  `short:"s" long:"surah"     description:"Surah number"`
 	Ayah     uint16 `short:"a" long:"ayah"      description:"Ayah number"`
@@ -20,6 +21,12 @@ type Options struct {
 func printVersion() {
 	fmt.Printf("quran-cli %s\n", VERSION)
 	os.Exit(0)
+}
+
+func listSurahs() {
+	for i, surah := range surahs() {
+		fmt.Printf("%d.\t%s\n", i+1, surah)
+	}
 }
 
 func invalidSurahAyah() {
@@ -87,6 +94,10 @@ func parseFlags() {
 	/* Flags */
 	if opts.Version {
 		printVersion()
+	}
+
+	if opts.List {
+		listSurahs()
 	}
 
 	if opts.Surah < 0 || opts.Surah > 114 || opts.Ayah < 0 || opts.Ayah > 6236 {
