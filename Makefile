@@ -1,4 +1,4 @@
-VERSION = v0.2-r$(shell date +%Y%m%d)
+VERSION = v0.3-r$(shell date +%Y%m%d)
 PREFIX = /usr/local
 # DB = $(PREFIX)/share/quran-cli/
 MANPREFIX = $(PREFIX)/share/man

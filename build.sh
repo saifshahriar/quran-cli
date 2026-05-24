@@ -1,7 +1,7 @@
 #!/bin/sh
 
-VERSION="v0.2"  # Set your version here
-BUILD_DATE="$(date +%Y%m%d)"  # Set your build date here
+VERSION="v0.3"               # Set your version here
+BUILD_DATE="$(date +%Y%m%d)" # Set your build date here
 
 GREEN='\033[0;32m'
 NC='\033[0m'
